@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágata | Poesia e Educação</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --dark: #2d3436;
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark);
+            background: linear-gradient(-45deg, #f3e5f5, #e1bee7, #d1c4e9, #ede7f6);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header com Parallax e Fade In */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -80px auto 100px;
+            padding: 0 20px;
+        }
+
+        /* Cards Estilizados */
+        section {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 4rem;
+            border-radius: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        section:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(108, 92, 231, 0.2);
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .poema-destaque {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+            text-align: center;
+            padding: 30px;
+            background: rgba(162, 155, 254, 0.1);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .poema-destaque::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+
+        /* Botão Minimalista e Animado */
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(253, 121, 168, 0.3);
+        }
+
+        .cta-button:hover {
+            letter-spacing: 2px;
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(253, 121, 168, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #636e72;
+            font-size: 1.1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            section { padding: 2rem; }
+            header h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 data-aos="zoom-in" data-aos-duration="1500">Ágata</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Poeta & Professora</p>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <div class="container">
+        <section data-aos="fade-right">
+            <h2>A Magia das Palavras</h2>
+            <p>Seus poemas não são apenas textos, Ágata. Eles são janelas para novos mundos. Ser poeta é ter o superpoder de eternizar sentimentos em papel.</p>
+            <div class="poema-destaque" data-aos="flip-up" data-aos-delay="300">
+                O giz escreve o futuro no quadro,<br>
+                A caneta desenha a alma no papel.<br>
+                Em cada verso, um novo aprendizado,<br>
+                Ágata, seu destino brilha no céu.
+            </div>
+        </section>
+
+        <section data-aos="fade-left">
+            <h2>O Dom de Ensinar</h2>
+            <p>O mundo precisa de professoras que amem a arte. Imagine o quanto você pode inspirar seus futuros alunos ao levar a poesia para dentro da sala de aula.</p>
+            <ul style="list-style: none; margin: 20px 0;">
+                <li data-aos="fade-up" data-aos-delay="100">✨ Criar mentes críticas e sonhadoras.</li>
+                <li data-aos="fade-up" data-aos-delay="200">✨ Transformar a educação através da sensibilidade.</li>
+                <li data-aos="fade-up" data-aos-delay="300">✨ Ser a mestre que você sempre quis ter.</li>
+            </ul>
+            <div class="btn-wrapper">
+                <a href="#" class="cta-button">Siga Seu Propósito</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Desenvolvido com carinho para a maior poeta que conheço. ✍️📚</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // duração das animações em milissegundos
+            once: false,    // se as animações devem acontecer toda vez que rolar
+            mirror: true    // se os elementos devem animar ao sair da tela
+        });
+    </script>
+</body>
+  </html>
+    
